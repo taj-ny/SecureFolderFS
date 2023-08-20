@@ -15,8 +15,8 @@ await unlockRoutine.ReadKeystoreAsync(keystoreStream, StreamSerializer.Instance)
 var cts = new CancellationTokenSource();
 var po = new ParallelOptions();
 po.CancellationToken = cts.Token;
-po.MaxDegreeOfParallelism = System.Environment.ProcessorCount;
-Parallel.ForEach(File.ReadAllLines(passwordsFile), password =>
+po.MaxDegreeOfParallelism = Environment.ProcessorCount;
+Parallel.ForEach(File.ReadAllLines(passwordsFile), po, password =>
 {
     Console.WriteLine($"Trying password \"{password}\"...");
    
