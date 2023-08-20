@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureFolderFS.UI", "Secure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureFolderFS.SourceGenerator", "SecureFolderFS.SourceGenerator\SecureFolderFS.SourceGenerator.csproj", "{279C01B3-86B8-4F9E-9D21-3C535E152F2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureFolderFS.Bruteforce", "SecureFolderFS.Bruteforce\SecureFolderFS.Bruteforce.csproj", "{A40BBE6C-F432-427E-9142-DCE923F1CF03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -321,6 +323,22 @@ Global
 		{279C01B3-86B8-4F9E-9D21-3C535E152F2F}.Release|x64.Build.0 = Release|Any CPU
 		{279C01B3-86B8-4F9E-9D21-3C535E152F2F}.Release|x86.ActiveCfg = Release|Any CPU
 		{279C01B3-86B8-4F9E-9D21-3C535E152F2F}.Release|x86.Build.0 = Release|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Debug|arm64.Build.0 = Debug|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Debug|x64.Build.0 = Debug|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Debug|x86.Build.0 = Debug|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Release|arm64.ActiveCfg = Release|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Release|arm64.Build.0 = Release|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Release|x64.ActiveCfg = Release|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Release|x64.Build.0 = Release|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Release|x86.ActiveCfg = Release|Any CPU
+		{A40BBE6C-F432-427E-9142-DCE923F1CF03}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

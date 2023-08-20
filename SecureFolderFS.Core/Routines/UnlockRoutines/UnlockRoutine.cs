@@ -26,7 +26,7 @@ using SecureFolderFS.Core.Cryptography.Enums;
 namespace SecureFolderFS.Core.Routines.UnlockRoutines
 {
     /// <inheritdoc cref="IUnlockRoutine"/>
-    internal sealed class UnlockRoutine : IUnlockRoutine
+    public sealed class UnlockRoutine : IUnlockRoutine
     {
         private readonly CipherProvider _cipherProvider;
         private VaultConfigurationDataModel? _configDataModel;
