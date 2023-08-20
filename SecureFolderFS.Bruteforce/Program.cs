@@ -20,6 +20,7 @@ Parallel.ForEach(File.ReadAllLines(passwordsFile), password =>
     {
         unlockRoutine.DeriveKeystore(new VaultPassword(password));
         Console.WriteLine($"\nFound password! \"{password}\"");
+        Console.ReadKey();
         Environment.Exit(0);
     }
     catch {}
