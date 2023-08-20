@@ -16,18 +16,23 @@ var cts = new CancellationTokenSource();
 var po = new ParallelOptions();
 po.CancellationToken = cts.Token;
 po.MaxDegreeOfParallelism = Environment.ProcessorCount;
-Parallel.ForEach(File.ReadAllLines(passwordsFile), po, password =>
+
+try
 {
-    Console.WriteLine($"Trying password \"{password}\"...");
-   
-    try
+    Parallel.ForEach(File.ReadAllLines(passwordsFile), po, password =>
     {
-        unlockRoutine.DeriveKeystore(new VaultPassword(password));
-        Console.WriteLine($"\nFound password! \"{password}\"");
-        cts.Cancel();
-    }
-    catch {}
-});
+        Console.WriteLine($"Trying password \"{password}\"...");
+
+        try
+        {
+            unlockRoutine.DeriveKeystore(new VaultPassword(password));
+            Console.WriteLine($"\nFound password! \"{password}\"");
+            cts.Cancel();
+        }
+        catch { }
+    });
+}
+catch (OperationCanceledException) { }
 
 Console.ReadKey();
 Environment.Exit(0);
