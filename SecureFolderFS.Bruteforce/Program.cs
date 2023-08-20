@@ -12,6 +12,10 @@ var unlockRoutine = new UnlockRoutine();
 using var keystoreStream = new FileStream(Path.Combine(vaultDirectory, "keystore.cfg"), FileMode.Open, FileAccess.Read);
 await unlockRoutine.ReadKeystoreAsync(keystoreStream, StreamSerializer.Instance);
 
+var cts = new CancellationTokenSource();
+var po = new ParallelOptions();
+po.CancellationToken = cts.Token;
+po.MaxDegreeOfParallelism = System.Environment.ProcessorCount;
 Parallel.ForEach(File.ReadAllLines(passwordsFile), password =>
 {
     Console.WriteLine($"Trying password \"{password}\"...");
@@ -20,7 +24,10 @@ Parallel.ForEach(File.ReadAllLines(passwordsFile), password =>
     {
         unlockRoutine.DeriveKeystore(new VaultPassword(password));
         Console.WriteLine($"\nFound password! \"{password}\"");
-        Environment.Exit(0);
+        cts.Cancel();
     }
     catch {}
 });
+
+Console.ReadKey();
+Environment.Exit(0);
